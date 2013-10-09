@@ -1,0 +1,24 @@
+<h1>Add a New Manufactrurer to the List</h1> 
+
+<%= form_for @manufacturers do |m| %>
+  <%- if @manufacturers.errors.size > 0 -%>
+    <%- @manufacturers.errors.full_messages.each do |error| -%>
+      <%= error %>
+  <%- end -%>
+<%- end -%>
+
+  <div>
+    <%= m.label :name %><br>
+    <%= m.text_field :name %>
+  </div>
+
+  <div>
+    <%= m.label :country %><br>
+    <%= m.text_field :country %>
+  </div>
+
+  <div>
+  <%= m.submit 'Save' %>
+  </div><br>
+<%- end -%>
+<%= link_to "Home", root_path %>
