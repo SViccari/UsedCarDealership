@@ -1,0 +1,8 @@
+<h1>Add a New Car to Inventory</h1>
+<%= simple_form_for(@cars) do |car| %>
+  <%= car.input :color %>
+  <%= car.input :year, as: :text, placeholder: "1980 or newer" %>
+  <%= car.input :mileage, as: :text %>
+  <%= car.input :description %>
+  <%= car.submit 'Save' %>
+<%- end -%>
