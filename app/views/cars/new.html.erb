@@ -1,0 +1,41 @@
+<%= form_for @cars do |f| %>
+  <%- if @cars.errors.size > 0 -%>
+  <ul class="errors">
+    <%- @cars.errors.full_messages.each do |error| -%>
+      <li><%= error %></li>
+    <%- end -%>
+  </ul>
+  <%- end -%>
+
+  <div>
+    <%= f.label :color %><br>
+    <%= f.text_field :color %>
+  </div>
+
+  <div>
+    <%= f.label :year %><br>
+    <%= f.text_field :year %>
+  </div>
+
+  <div>
+    <%= f.label :mileage %><br>
+    <%= f.text_field :mileage %>
+  </div>
+
+  <div>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+
+  <div>
+    <%= f.label :manufacturer_id %><br>
+    <%= f.select :manufacturer_id, options_from_collection_for_select(Manufacturer.all, :id, :name) %><br>
+    <!-- #don't use select_tags if you want the car to save the id number -->
+  </div>
+
+  <div>
+    <%= f.submit 'Save' %>
+  </div><br>
+<%- end -%>
+
+<%= link_to "Home", root_path %>
