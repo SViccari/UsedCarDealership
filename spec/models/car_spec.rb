@@ -10,5 +10,5 @@ describe Car do
   it {should have_valid(:mileage).when(10000, 500, 0)}
   it {should_not have_valid(:mileage).when(nil, "")}
 
-  # it {should belong_to(:manufacturer)}
+  it {should belong_to(:manufacturer)}
 end

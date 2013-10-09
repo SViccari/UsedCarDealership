@@ -1,0 +1,15 @@
+<strong>Car Inventory:</string><br>
+
+<% @cars.each do |car| %>
+  <p>
+    Color: <%= car.color %><br>
+    Year: <%= car.year %><br>
+    Mileage: <%= car.mileage %><br>
+    Description: <%= car.description %><br>
+    Manufacturer: <%= car.manufacturer.try(:name) || "No manufacturer has been assigned" %><br>
+<!--     #this blew up because not all the cars have a manufacturer so the Nilclass was 
+    causing an error
+ -->  </p>
+<%- end -%>
+
+<%= link_to 'Home', root_path %>

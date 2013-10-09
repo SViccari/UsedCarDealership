@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>UsedCarLot</title>
+  <link data-turbolinks-track="true" href="/assets/application.css" media="all" rel="stylesheet" />
+  <script data-turbolinks-track="true" src="/assets/application.js"></script>
+  
+</head>
+<body>
+
+
+<form accept-charset="UTF-8" action="/cars" class="new_car" id="new_car" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+
+  <div>
+    <label for="car_color">Color</label><br>
+    <input id="car_color" name="car[color]" type="text" />
+  </div>
+
+  <div>
+    <label for="car_year">Year</label><br>
+    <input id="car_year" name="car[year]" type="text" />
+  </div>
+
+  <div>
+    <label for="car_mileage">Mileage</label><br>
+    <input id="car_mileage" name="car[mileage]" type="text" />
+  </div>
+
+  <div>
+    <label for="car_description">Description</label><br>
+    <input id="car_description" name="car[description]" type="text" />
+  </div>
+
+  <div>
+    <label for="car_manufacturer_id">Manufacturer</label><br>
+    <select id="manufacturer_manufacturer_id" name="manufacturer[manufacturer_id]"><option value="Toyota">Toyota</option></select>
+  </div>
+
+  <div>
+    <input name="commit" type="submit" value="Save" />
+  </div><br>
+</form>
+<a href="/">Home</a>
+
+
+</body>
+</html>

@@ -3,6 +3,10 @@ class CarsController < ApplicationController
     @cars = Car.new
   end
 
+  def index
+    @cars = Car.all
+  end
+
   def create
     @cars = Car.new(car_params)
     if @cars.save
@@ -14,6 +18,6 @@ class CarsController < ApplicationController
 
   protected
   def car_params
-    params.require(:car).permit(:color, :year, :mileage, :description)
+    params.require(:car).permit(:color, :year, :mileage, :description, :manufacturer_id)
   end
 end

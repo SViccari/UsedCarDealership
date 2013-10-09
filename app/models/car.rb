@@ -8,4 +8,7 @@ class Car < ActiveRecord::Base
 
   validates_inclusion_of :year, :in => 1980..2014
 
+  # def self.manufacturer_name
+  #   @cars.manufacturer.map {|name|}
+  # end
 end
