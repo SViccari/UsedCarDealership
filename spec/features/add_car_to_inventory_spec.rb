@@ -32,4 +32,16 @@ feature 'user adds a car to inventory', %Q{
     expect(page).to have_content("Car successfully saved!")
     expect(Car.count).to eql(prev_count + 1)
   end
+
+  scenario 'user fails to supply valid information' do 
+    prev_count = Car.count
+
+    visit root_path
+    click_link 'Add a New Car'
+
+    click_button 'Save'
+    
+    expect(page).to_not have_content("Car successfully saved!")
+    expect(Car.count).to eql(prev_count)
+  end
 end
